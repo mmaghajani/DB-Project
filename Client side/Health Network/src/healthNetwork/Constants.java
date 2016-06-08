@@ -26,6 +26,14 @@ public abstract class Constants {
      */
     public static final String fantasticFont = "FantasticFont" ;
     /**
+     * A font name that called segoe font
+     */
+    public static final String segoeFont = "Segoe UI" ;
+    /**
+     * A font name that called arial font
+     */
+    public static final String arilFont = "Arial" ;
+    /**
      * Path for exit.jpg
      */
     public static final String exitJPGPath = "/images/exit.jpg" ;
@@ -41,4 +49,8 @@ public abstract class Constants {
      * Path for blue label background image
      */
     public static final String labelJPGPath = "/images/label.jpg" ;
+    /**
+     * Path for blue label background button
+     */
+    public static final String buttonJPGPath = "/images/button.jpg" ;
 }

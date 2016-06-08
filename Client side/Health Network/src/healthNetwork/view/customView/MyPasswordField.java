@@ -1,6 +1,8 @@
 package healthNetwork.view.customView;
 
 import com.sun.deploy.panel.JSmartTextArea;
+import healthNetwork.Constants;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -14,16 +16,19 @@ public class MyPasswordField extends JPasswordField{
 
     private String text = "" ;
     private boolean flag = true ;
+    private Image image = null ;
+
+    private final int fontSize = 12 ;
 
     public MyPasswordField(){
         super() ;
     }
 
-    public MyPasswordField( String name ){
+    public MyPasswordField( String name , String path){
         super() ;
         text = name ;
-
-        this.setFont(new Font("Arial" , Font.CENTER_BASELINE , 12 ) );
+        this.image = new ImageIcon(getClass().getResource(path)).getImage();
+        this.setFont(new Font(Constants.arilFont, Font.CENTER_BASELINE , fontSize ) );
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -85,5 +90,12 @@ public class MyPasswordField extends JPasswordField{
 
             }
         });
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        if (image != null)
+            g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
+        super.paint(g);
     }
 }

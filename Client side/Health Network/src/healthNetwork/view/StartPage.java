@@ -34,8 +34,8 @@ public class StartPage extends JFrame {
     private final int heightOfTitleBar = height / 7 ;
     private final int widthOfTitleBar = width ;
     private final int titleBarX = 0 ;
-    private final int titleBarY = 0 ;
-    private final int titleFontSize = 40 ;
+    private final int titleBarY = height / 15 ;
+    private final int titleFontSize = 50 ;
     private final int mainPanelX = 0 ;
     private final int mainPanelY = heightOfTitleBar ;
     private final int heightOfMainPanel = height * 5 / 7 ;
@@ -62,13 +62,21 @@ public class StartPage extends JFrame {
     }
 
     private void setMainPanel() {
-        id = new MyTextField("ID") ;
+        id = new MyTextField("ID" , Constants.buttonJPGPath) ;
         id.setSize(width * 2 / 3 , height / 8 );
-        id.setLocation(widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel/6 );
+        id.setLocation(widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel/4 );
 
-        passwordField = new MyPasswordField("Password") ;
+        passwordField = new MyPasswordField("Password" , Constants.buttonJPGPath) ;
         passwordField.setSize(width * 2 / 3 , height / 8 );
         passwordField.setLocation(widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel/2 );
+
+        signIn = new MyButton("sign in" , Constants.buttonJPGPath) ;
+        signIn.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
+        signIn.setLocation( widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel * 5/6 );
+
+        signUp = new MyButton("sign up" , Constants.buttonJPGPath) ;
+        signUp.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
+        signUp.setLocation( widthOfMainPanel/2  , mainPanelY + heightOfMainPanel * 5/6 );
     }
 
     private void initialize(){
@@ -83,7 +91,7 @@ public class StartPage extends JFrame {
 
         try {
             UIManager
-                    .setLookAndFeel(Constants.aluminumLookAndFeel);
+                    .setLookAndFeel(Constants.nimbusLookAndFeel);
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -128,6 +136,7 @@ public class StartPage extends JFrame {
         toolBar.setLocation(toolBarX,toolBarY);
         toolBar.setSize(widthOfToolBar, heightOfToolBar);
         toolBar.setBorder(BorderFactory.createEmptyBorder());
+        toolBar.setFloatable(false);
         toolBar.add(exit);
     }
 
@@ -136,7 +145,8 @@ public class StartPage extends JFrame {
         getContentPane().add(toolBar);
         getContentPane().add(id) ;
         getContentPane().add(passwordField) ;
-
+        getContentPane().add(signIn) ;
+        getContentPane().add(signUp) ;
     }
 
     /**
@@ -152,5 +162,7 @@ public class StartPage extends JFrame {
 
         title.repaint();
         toolBar.getComponent(0).repaint();
+        signIn.repaint();
+        signUp.repaint();
     }
 }

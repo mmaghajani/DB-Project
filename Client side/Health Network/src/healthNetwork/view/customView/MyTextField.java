@@ -1,6 +1,8 @@
 package healthNetwork.view.customView;
 
 import com.sun.deploy.panel.JSmartTextArea;
+import healthNetwork.Constants;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -14,16 +16,18 @@ public class MyTextField extends JTextField{
 
     private String text = "" ;
     private boolean flag = true ;
+    private Image image = null ;
+    private final int fontSize = 12 ;
 
     public MyTextField(){
         super() ;
     }
 
-    public MyTextField( String name ){
+    public MyTextField( String name , String path){
         super() ;
         text = name ;
-
-        this.setFont(new Font("Arial" , Font.CENTER_BASELINE , 12 ) );
+        this.image = new ImageIcon(getClass().getResource(path)).getImage();
+        this.setFont(new Font(Constants.arilFont, Font.CENTER_BASELINE , fontSize ) );
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -81,5 +85,12 @@ public class MyTextField extends JTextField{
 
             }
         });
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        if (image != null)
+            g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
+        super.paint(g);
     }
 }
