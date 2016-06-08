@@ -1,5 +1,6 @@
 package healthNetwork;
 
+import healthNetwork.view.StartPage;
 import healthNetwork.view.panels.DoctorPanel;
 import healthNetwork.view.panels.UserPanel;
 
@@ -9,6 +10,6 @@ import healthNetwork.view.panels.UserPanel;
 public class Main {
 
     public static void main( String[] args){
-        UserPanel startPage = new DoctorPanel() ;
+        StartPage startPage = new StartPage() ;
     }
 }
