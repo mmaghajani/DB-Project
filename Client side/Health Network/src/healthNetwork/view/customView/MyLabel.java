@@ -13,9 +13,11 @@ import javax.swing.JLabel;
  */
 public class MyLabel extends JLabel {
 
+    private Image image = null;
 
-    public MyLabel(String s, ImageIcon image, int x) {
-        super(s, image, x);// TODO Auto-generated constructor stub
+    public MyLabel(String text, ImageIcon image, int x) {
+        super(text, image, x);// TODO Auto-generated constructor stub
+        this.image = image.getImage() ;
     }
 
     public MyLabel(String s, int x) {
@@ -23,12 +25,19 @@ public class MyLabel extends JLabel {
         super(s, x);
     }
 
+    public MyLabel(String text, String path, int x) {
+        super(text, x);
+        image = new ImageIcon(getClass().getResource(path)).getImage();
+    }
+
+    /**
+     * Paint label with its image if image not null
+     * @param g
+     */
     @Override
     public void paint(Graphics g) {
-
-        Image image = new ImageIcon(getClass().getResource(Constants.labelJPGPath)).getImage();
-        g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
-
+        if (image != null)
+            g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
         super.paint(g);
     }
 }

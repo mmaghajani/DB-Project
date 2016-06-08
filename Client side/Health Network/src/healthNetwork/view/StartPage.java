@@ -90,9 +90,7 @@ public class StartPage extends JFrame {
     }
 
     private void setTitle() {
-        title = new MyLabel(Constants.appName, JLabel.CENTER);
-        Color c = new Color(50 , 100 , 0 , 0 ) ;
-        title.setBackground(c);
+        title = new MyLabel(Constants.appName, Constants.labelJPGPath , JLabel.CENTER);
         title.setLocation(titleBarX, titleBarY);
         title.setSize(widthOfTitleBar, heightOfTitleBar);
         title.setForeground(Color.WHITE);
@@ -100,7 +98,7 @@ public class StartPage extends JFrame {
     }
 
     private void setToolBar() {
-        JButton exit = new MyButton(Constants.exitJPGPath, 1);
+        JButton exit = new MyButton(Constants.exitJPGPath);
         exit.setLocation(0, 0);
         exit.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
         exit.setIcon(new ImageIcon(getClass().getResource(Constants.exitPNGPath)) );

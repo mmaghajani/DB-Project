@@ -1,4 +1,5 @@
 package healthNetwork.view.customView;
+
 import healthNetwork.Constants;
 
 import java.awt.Graphics;
@@ -14,20 +15,16 @@ public class MyButton extends JButton {
 
     private Image image = null;
 
-    public MyButton(String s) {
-        super(s);
-    }
-
-    public MyButton(String text, String name) {
+    public MyButton(String text, String path) {
         // TODO Auto-generated constructor stub
         super(text);
-        this.image = new ImageIcon(getClass().getResource(name)).getImage();
+        this.image = new ImageIcon(getClass().getResource(path)).getImage();
     }
 
-    public MyButton(String name, int khali) {
+    public MyButton(String path) {
         // TODO Auto-generated constructor stub
         super();
-        this.image = new ImageIcon(name).getImage();
+        this.image = new ImageIcon(getClass().getResource(path)).getImage();
     }
 
     public MyButton() {
@@ -35,20 +32,14 @@ public class MyButton extends JButton {
         super();
     }
 
+    /**
+     * Paint button with its image if image not null
+     * @param g
+     */
     @Override
     public void paint(Graphics g) {
-
-
-        if (this.image == null) {
-            Image image = new ImageIcon(getClass().getResource("/images/button.jpg"))
-                    .getImage();
+        if (image != null)
             g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
-        } else {
-            Image image = new ImageIcon(getClass().getResource(Constants.exitJPGPath)).getImage();
-            g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), null);
-        }
-
-
         super.paint(g);
     }
 }
