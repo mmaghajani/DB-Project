@@ -1,6 +1,7 @@
-package healthNetwork.view;
+package healthNetwork.view.panels;
 
 import healthNetwork.Constants;
+import healthNetwork.core.User;
 import healthNetwork.handler.GraphicHandler;
 import healthNetwork.view.customView.MyButton;
 import healthNetwork.view.customView.MyLabel;
@@ -13,32 +14,33 @@ import java.awt.*;
 /**
  * Created by mma on 6/8/2016.
  */
-public class DoctorPanel extends JFrame{
-    private int width = GraphicHandler.getInstance().getWidthScreen() / 2 ;
-    private int height = GraphicHandler.getInstance().getHeightScreen() * 2 / 3 ;
+public abstract  class UserPanel extends JFrame{
+    protected int width = GraphicHandler.getInstance().getWidthScreen() / 2 ;
+    protected int height = GraphicHandler.getInstance().getHeightScreen() * 2 / 3 ;
 
-    private MyPanel titleBar ;
-    private MyPanel listOfPatient ;
-    private MyPanel main ;
+    protected MyPanel titleBar ;
+    protected MyPanel drawer ;
+    protected MyPanel main ;
 
+    protected User core ;
     /**
      * Magnitude of imaginary layouts
      */
-    private final int heightOfTitleBar = height / 7 ;
-    private final int widthOfTitleBar = width ;
-    private final int titleBarX = 0 ;
-    private final int titleBarY = 0 ;
-    private final int titleFontSize = 20 ;
-    private final int heightOfListOfPatient = height - heightOfTitleBar ;
-    private final int widthOfListOfPatient = width / 4 ;
-    private final int listOfPatientX = width - widthOfListOfPatient ;
-    private final int listOfPatientY = heightOfTitleBar ;
-    private final int widthOfMain = width ;
-    private final int heightOfMain = heightOfListOfPatient ;
-    private final int mainX = 0 ;
-    private final int mainY = listOfPatientY ;
+    protected final int heightOfTitleBar = height / 7 ;
+    protected final int widthOfTitleBar = width ;
+    protected final int titleBarX = 0 ;
+    protected final int titleBarY = 0 ;
+    protected final int titleFontSize = 20 ;
+    protected final int heightOfListOfPatient = height - heightOfTitleBar ;
+    protected final int widthOfListOfPatient = width / 4 ;
+    protected final int listOfPatientX = width - widthOfListOfPatient ;
+    protected final int listOfPatientY = heightOfTitleBar ;
+    protected final int widthOfMain = width ;
+    protected final int heightOfMain = heightOfListOfPatient ;
+    protected final int mainX = 0 ;
+    protected final int mainY = listOfPatientY ;
 
-    public DoctorPanel(){
+    public UserPanel(){
         super();
 
         initialize();
@@ -79,55 +81,17 @@ public class DoctorPanel extends JFrame{
     }
 
     private void setContent(){
-        setTitle() ;
-
-        setListOfPatient() ;
-
-        setMain() ;
-    }
-
-    private void setMain() {
         main = new MyPanel(Constants.blueBackJPGPath) ;
         main.setSize(widthOfMain , heightOfMain);
         main.setLocation(mainX , mainY);
-    }
 
-    private void setListOfPatient() {
-        listOfPatient = new MyPanel(Constants.darkBlueJPGPath) ;
-        listOfPatient.setSize(widthOfListOfPatient , heightOfListOfPatient);
-        listOfPatient.setLocation(listOfPatientX , listOfPatientY + 10 );
+        drawer = new MyPanel(Constants.darkBlueJPGPath) ;
+        drawer.setSize(widthOfListOfPatient , heightOfListOfPatient);
+        drawer.setLocation(listOfPatientX , listOfPatientY + 10 );
 
-        MyLabel title = new MyLabel("List of patient" , MyLabel.CENTER) ;
-        title.setFont(new Font(Constants.segoeFont, Font.BOLD, titleFontSize));
-        title.setLocation(0, 0);
-        title.setSize(widthOfListOfPatient , heightOfListOfPatient / 10);
-        title.setForeground(Color.WHITE);
-        listOfPatient.add(title) ;
-    }
-
-    private void AddComponentsToFrame() {
-        getContentPane().add(titleBar);
-        getContentPane().add(listOfPatient) ;
-        getContentPane().add(main) ;
-//        getContentPane().add(toolBar) ;
-//        getContentPane().add(toolBar);
-//        getContentPane().add(id) ;
-//        getContentPane().add(passwordField) ;
-//        getContentPane().add(signIn) ;
-//        getContentPane().add(signUp) ;
-    }
-
-    private void setTitle(){
         titleBar = new MyPanel(Constants.darkBlueJPGPath) ;
         titleBar.setSize(width , heightOfTitleBar);
         titleBar.setLocation(titleBarX , titleBarY);
-
-        MyLabel name = new MyLabel("Hello Dr." , Constants.darkBlueJPGPath , JLabel.LEFT);
-        name.setLocation(titleBarX, titleBarY);
-        name.setSize(widthOfTitleBar / 2 , heightOfTitleBar);
-        name.setForeground(Color.WHITE);
-        name.setBorder(new EmptyBorder(Constants.margin, Constants.margin, Constants.margin, Constants.margin));
-        name.setFont(new Font(Constants.segoeFont, Font.BOLD, titleFontSize));
 
         JToolBar toolBar = new JToolBar();
         toolBar.setSize(Constants.sizeOfSignOutButton , Constants.sizeOfSignOutButton);
@@ -145,9 +109,28 @@ public class DoctorPanel extends JFrame{
 
 
         toolBar.add(signOut) ;
-        titleBar.add(name) ;
         titleBar.add(toolBar) ;
+
+        setTitle() ;
+
+        setDrawer() ;
+
+        setMain() ;
     }
+
+    protected abstract void setMain() ;
+
+    protected abstract void setDrawer() ;
+
+    protected abstract  void setTitle() ;
+
+    private void AddComponentsToFrame() {
+        getContentPane().add(titleBar);
+        getContentPane().add(drawer) ;
+        getContentPane().add(main) ;
+    }
+
+
 
     /**
      * This method draws a blue image background of this frame
@@ -160,13 +143,10 @@ public class DoctorPanel extends JFrame{
         Image image = new ImageIcon(getClass().getResource(Constants.blueBackJPGPath)).getImage();
         g.drawImage(image, 0, 0, width, height, null);
 
-        listOfPatient.repaint();
+        drawer.repaint();
         titleBar.repaint();
         main.repaint();
 
-//        toolBar.getComponent(0).repaint();
-//        signIn.repaint();
-//        signUp.repaint();
     }
 
 }
