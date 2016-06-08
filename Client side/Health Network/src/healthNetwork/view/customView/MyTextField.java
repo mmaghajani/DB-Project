@@ -3,6 +3,7 @@ package healthNetwork.view.customView;
 import com.sun.deploy.panel.JSmartTextArea;
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.*;
 
 /**
@@ -22,10 +23,13 @@ public class MyTextField extends JTextField{
         super() ;
         text = name ;
 
+        this.setFont(new Font("Arial" , Font.CENTER_BASELINE , 12 ) );
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 if( flag == true ) {
+                    MyTextField.this.setForeground(Color.LIGHT_GRAY);
                     MyTextField.this.setText(text);
                 }
 
@@ -53,11 +57,13 @@ public class MyTextField extends JTextField{
             public void keyTyped(KeyEvent e) {
                 if( flag == true ) {
                     if( e.getKeyChar() != '\b') {
+                        MyTextField.this.setForeground(Color.BLACK);
                         MyTextField.this.setText("");
                         flag = false;
                     }
                 }else{
                     if( MyTextField.this.getText().equals("")) {
+                        MyTextField.this.setForeground(Color.LIGHT_GRAY);
                         MyTextField.this.setText(text);
                         MyTextField.this.setCaretPosition(0);
                         flag = true;

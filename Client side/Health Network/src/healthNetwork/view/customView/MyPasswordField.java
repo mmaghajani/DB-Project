@@ -3,10 +3,11 @@ package healthNetwork.view.customView;
 import com.sun.deploy.panel.JSmartTextArea;
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.*;
 
 /**
- * The class is a text field that has auto set text for field name
+ * The class is a password field that has auto set text for field name
  * Created by mma on 6/8/2016.
  */
 public class MyPasswordField extends JPasswordField{
@@ -22,19 +23,22 @@ public class MyPasswordField extends JPasswordField{
         super() ;
         text = name ;
 
+        this.setFont(new Font("Arial" , Font.CENTER_BASELINE , 12 ) );
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 if( flag == true ) {
                     char c = 0 ;
                     MyPasswordField.this.setEchoChar(c);
+                    MyPasswordField.this.setForeground(Color.LIGHT_GRAY);
                     MyPasswordField.this.setText(text);
                 }
 
             }
         }) ;
         thread.start();
-        System.out.println( this.getEchoChar() ) ;
+
         this.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -54,12 +58,14 @@ public class MyPasswordField extends JPasswordField{
             public void keyTyped(KeyEvent e) {
                 if( flag == true ) {
                     if( e.getKeyChar() != '\b') {
+                        MyPasswordField.this.setForeground(Color.BLACK);
                         MyPasswordField.this.setEchoChar('•');
                         MyPasswordField.this.setText("");
                         flag = false;
                     }
                 }else{
                     if( MyPasswordField.this.getText().equals("")) {
+                        MyPasswordField.this.setForeground(Color.LIGHT_GRAY);
                         char c = 0 ;
                         MyPasswordField.this.setEchoChar(c);
                         MyPasswordField.this.setText(text);
