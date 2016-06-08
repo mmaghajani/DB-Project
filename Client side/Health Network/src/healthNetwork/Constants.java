@@ -1,5 +1,7 @@
 package healthNetwork;
 
+import java.awt.*;
+
 /**
  * A class to store global constants such as preference kies.
  * Created by mma on 6/8/2016.
@@ -53,4 +55,8 @@ public abstract class Constants {
      * Path for blue label background button
      */
     public static final String buttonJPGPath = "/images/button.jpg" ;
+    /**
+     * Gray color for text of buttons
+     */
+    public static final Color gray = Color.decode("#666869") ;
 }

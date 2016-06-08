@@ -55,11 +55,11 @@ public class MyButton extends JButton {
     private void initialize(String path){
         this.image = new ImageIcon(getClass().getResource(path)).getImage();
         this.setFont(new Font(Constants.segoeFont , Font.CENTER_BASELINE , fontSize ) );
-        this.setForeground(Color.DARK_GRAY);
+        this.setForeground(Constants.gray);
     }
 
     private void initialize(){
         this.setFont(new Font(Constants.segoeFont , Font.CENTER_BASELINE , fontSize ) );
-        this.setForeground(Color.DARK_GRAY);
+        this.setForeground(Constants.gray);
     }
 }
