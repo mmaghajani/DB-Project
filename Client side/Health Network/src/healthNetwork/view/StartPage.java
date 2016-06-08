@@ -4,6 +4,8 @@ import healthNetwork.Constants;
 import healthNetwork.view.customView.MyButton;
 import healthNetwork.handler.GraphicHandler;
 import healthNetwork.view.customView.MyLabel;
+import healthNetwork.view.customView.MyPasswordField;
+import healthNetwork.view.customView.MyTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +22,7 @@ public class StartPage extends JFrame {
     private int width = GraphicHandler.getInstance().getWidthScreen() / 4 ;
     private int height = GraphicHandler.getInstance().getHeightScreen() / 3 ;
     private MyLabel title ;
-    private JTextField id ;
+    private MyTextField id ;
     private JPasswordField passwordField ;
     private JButton signIn ;
     private JButton signUp ;
@@ -50,15 +52,23 @@ public class StartPage extends JFrame {
 
         setTitle();
 
-     //   setDecodeButton();
-
-     //   setEncodeButton();
+        setMainPanel() ;
 
         setToolBar() ;
 
         AddComponentsToFrame() ;
 
         setVisible(true);
+    }
+
+    private void setMainPanel() {
+        id = new MyTextField("ID") ;
+        id.setSize(width * 2 / 3 , height / 8 );
+        id.setLocation(widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel/6 );
+
+        passwordField = new MyPasswordField("Password") ;
+        passwordField.setSize(width * 2 / 3 , height / 8 );
+        passwordField.setLocation(widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel/2 );
     }
 
     private void initialize(){
@@ -124,8 +134,8 @@ public class StartPage extends JFrame {
     private void AddComponentsToFrame() {
         getContentPane().add(title);
         getContentPane().add(toolBar);
-//        getContentPane().add(encode);
-//        getContentPane().add(exitBar);
+        getContentPane().add(id) ;
+        getContentPane().add(passwordField) ;
 
     }
 
@@ -141,5 +151,6 @@ public class StartPage extends JFrame {
         g.drawImage(image, 0, 0, width, height, null);
 
         title.repaint();
+        toolBar.getComponent(0).repaint();
     }
 }
