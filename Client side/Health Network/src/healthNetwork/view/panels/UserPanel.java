@@ -80,6 +80,7 @@ public abstract  class UserPanel extends JFrame{
         }
     }
 
+    //set layouts
     private void setContent(){
         main = new MyPanel(Constants.blueBackJPGPath) ;
         main.setSize(widthOfMain , heightOfMain);

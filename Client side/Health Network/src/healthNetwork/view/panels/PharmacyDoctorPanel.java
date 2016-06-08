@@ -1,25 +1,24 @@
 package healthNetwork.view.panels;
 
 import healthNetwork.Constants;
-import healthNetwork.core.Doctor;
-import healthNetwork.handler.GraphicHandler;
-import healthNetwork.view.customView.MyButton;
+import healthNetwork.core.Patient;
+import healthNetwork.core.PharmacyDoctor;
 import healthNetwork.view.customView.MyLabel;
-import healthNetwork.view.customView.MyPanel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
- * Created by mma on 6/8/2016.
+ * Created by mma on 6/9/2016.
  */
-public class DoctorPanel extends UserPanel{
+public class PharmacyDoctorPanel extends UserPanel {
 
-    public DoctorPanel(){
+
+    public PharmacyDoctorPanel(){
         super();
 
-        core = new Doctor() ;
+        core = new PharmacyDoctor() ;
     }
 
     /**
@@ -45,7 +44,7 @@ public class DoctorPanel extends UserPanel{
      * Set title and content for title bar based on core object
      */
     protected void setTitle(){
-        MyLabel name = new MyLabel("Hello Dr." , Constants.darkBlueJPGPath , JLabel.LEFT);
+        MyLabel name = new MyLabel("Hello PDr." , Constants.darkBlueJPGPath , JLabel.LEFT);
         name.setLocation(titleBarX, titleBarY);
         name.setSize(widthOfTitleBar / 2 , heightOfTitleBar);
         name.setForeground(Color.WHITE);
@@ -53,5 +52,4 @@ public class DoctorPanel extends UserPanel{
         name.setFont(new Font(Constants.segoeFont, Font.BOLD, titleFontSize));
         titleBar.add(name) ;
     }
-
 }
