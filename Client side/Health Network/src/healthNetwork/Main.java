@@ -1,5 +1,6 @@
 package healthNetwork;
 
+import healthNetwork.view.DoctorPanel;
 import healthNetwork.view.StartPage;
 
 import javax.swing.*;
@@ -10,6 +11,6 @@ import javax.swing.*;
 public class Main {
 
     public static void main( String[] args){
-        StartPage startPage = new StartPage() ;
+        DoctorPanel startPage = new DoctorPanel() ;
     }
 }

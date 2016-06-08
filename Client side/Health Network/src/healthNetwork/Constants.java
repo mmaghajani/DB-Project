@@ -12,6 +12,10 @@ public abstract class Constants {
      */
     public static final int sizeOfExitButton = 28 ;
     /**
+     * Size of exit button in start page
+     */
+    public static final int sizeOfSignOutButton = 40 ;
+    /**
      * For UI manager , it is path for nimbus
      */
     public static final String nimbusLookAndFeel = "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel" ;
@@ -56,7 +60,23 @@ public abstract class Constants {
      */
     public static final String buttonJPGPath = "/images/button.jpg" ;
     /**
+     * Path for blue label background button
+     */
+    public static final String darkBlueJPGPath = "/images/dark_blue.jpg" ;
+    /**
+     * Path for sign out button
+     */
+    public static final String signOutPNGPath = "/images/sign_out.png" ;
+    /**
      * Gray color for text of buttons
      */
     public static final Color gray = Color.decode("#666869") ;
+    /**
+     * Dark blue color for background of buttons
+     */
+    public static final Color darkBlue = Color.decode("#1D0BB8") ;
+    /**
+     * Margins for titke bar
+     */
+    public static final int margin = 10 ;
 }
