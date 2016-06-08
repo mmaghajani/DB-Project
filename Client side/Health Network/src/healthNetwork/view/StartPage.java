@@ -29,14 +29,18 @@ public class StartPage extends JFrame {
     /**
      * Magnitude of imaginary layouts
      */
-    private final int heightOfTitleBar = height / 6 ;
+    private final int heightOfTitleBar = height / 7 ;
     private final int widthOfTitleBar = width ;
     private final int titleBarX = 0 ;
     private final int titleBarY = 0 ;
     private final int titleFontSize = 40 ;
+    private final int mainPanelX = 0 ;
+    private final int mainPanelY = heightOfTitleBar ;
+    private final int heightOfMainPanel = height * 5 / 7 ;
+    private final int widthOfMainPanel = width ;
     private final int toolBarX = 0 ;
-    private final int toolBarY = height * 6 / 7 ;
-    private final int heightOfToolBar = height / 6 ;
+    private final int toolBarY = heightOfTitleBar + heightOfMainPanel ;
+    private final int heightOfToolBar = height - ( heightOfMainPanel + heightOfTitleBar ) ;
     private final int widthOfToolBar = width ;
 
     public StartPage(){
@@ -50,7 +54,7 @@ public class StartPage extends JFrame {
 
      //   setEncodeButton();
 
-        setExitButton() ;
+        setToolBar() ;
 
         AddComponentsToFrame() ;
 
@@ -59,8 +63,6 @@ public class StartPage extends JFrame {
 
     private void initialize(){
         GraphicHandler graphicHandler = GraphicHandler.getInstance() ;
-        int widthScreen = graphicHandler.getWidthScreen() ;
-        int heightScreen = graphicHandler.getHeightScreen() ;
 
         this.setSize(width, height);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -97,7 +99,7 @@ public class StartPage extends JFrame {
         title.setFont(new Font(Constants.fantasticFont, Font.BOLD, titleFontSize));
     }
 
-    private void setExitButton() {
+    private void setToolBar() {
         JButton exit = new MyButton(Constants.exitJPGPath, 1);
         exit.setLocation(0, 0);
         exit.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
