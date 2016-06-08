@@ -1,6 +1,7 @@
 package healthNetwork.view.panels;
 
 import healthNetwork.Constants;
+import healthNetwork.core.Doctor;
 import healthNetwork.handler.GraphicHandler;
 import healthNetwork.view.customView.MyButton;
 import healthNetwork.view.customView.MyLabel;
@@ -17,6 +18,8 @@ public class DoctorPanel extends UserPanel{
 
     public DoctorPanel(){
         super();
+
+        core = new Doctor() ;
     }
 
     protected void setMain() {

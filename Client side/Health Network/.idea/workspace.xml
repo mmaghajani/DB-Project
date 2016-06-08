@@ -62,15 +62,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoctorPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DoctorPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/healthNetwork/view/panels/DoctorPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+            <state relative-caret-position="85">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#442#443#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,7 +128,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PharmacyDoctor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PharmacyDoctor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/healthNetwork/core/PharmacyDoctor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -198,13 +196,13 @@
         <option value="$PROJECT_DIR$/src/healthNetwork/Constants.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/view/customView/MyPanel.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/view/DoctorPanel.java" />
-        <option value="$PROJECT_DIR$/src/healthNetwork/view/panels/DoctorPanel.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/Main.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/view/panels/UserPanel.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/core/Doctor.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/core/Patient.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/core/Scholar.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/core/PharmacyDoctor.java" />
+        <option value="$PROJECT_DIR$/src/healthNetwork/view/panels/DoctorPanel.java" />
       </list>
     </option>
   </component>
@@ -857,7 +855,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1465379843215</updated>
-      <workItem from="1465379845933" duration="30103000" />
+      <workItem from="1465379845933" duration="30367000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1465380413129</created>
@@ -870,7 +868,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30103000" />
+    <option name="totallyTimeSpent" value="30367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1048,18 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/healthNetwork/view/panels/DoctorPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1075,16 +1061,6 @@
         <state relative-caret-position="85">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/healthNetwork/view/panels/UserPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,6 +1093,26 @@
         <state relative-caret-position="85">
           <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/healthNetwork/view/panels/UserPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/healthNetwork/view/panels/DoctorPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
