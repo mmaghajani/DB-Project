@@ -10,6 +10,6 @@ import healthNetwork.view.panels.UserPanel;
 public class Main {
 
     public static void main( String[] args){
-        StartPage startPage = new StartPage() ;
+        DoctorPanel startPage = new DoctorPanel() ;
     }
 }

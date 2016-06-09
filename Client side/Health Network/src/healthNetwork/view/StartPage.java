@@ -160,6 +160,10 @@ public class StartPage extends JFrame {
         Image image = new ImageIcon(getClass().getResource(Constants.blueBackJPGPath)).getImage();
         g.drawImage(image, 0, 0, width, height, null);
 
+        componentRepaint() ;
+    }
+
+    private void componentRepaint() {
         titleLbl.repaint();
         toolBar.getComponent(0).repaint();
         signInBtn.repaint();
