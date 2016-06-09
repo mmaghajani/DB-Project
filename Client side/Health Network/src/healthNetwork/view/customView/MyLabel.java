@@ -15,18 +15,35 @@ public class MyLabel extends JLabel {
 
     private Image image = null;
 
-    public MyLabel(String text, ImageIcon image, int x) {
-        super(text, image, x);// TODO Auto-generated constructor stub
+    /**
+     * Set text for this label with alignment and set background .
+     * @param text text of label
+     * @param image background image
+     * @param alignment text alignment
+     */
+    public MyLabel(String text, ImageIcon image, int alignment) {
+        super(text, image, alignment);// TODO Auto-generated constructor stub
         this.image = image.getImage() ;
     }
 
-    public MyLabel(String s, int x) {
+    /**
+     * Set text with alignment for this label
+     * @param s
+     * @param alignment
+     */
+    public MyLabel(String s, int alignment) {
         // TODO Auto-generated constructor stub
-        super(s, x);
+        super(s, alignment);
     }
 
-    public MyLabel(String text, String path, int x) {
-        super(text, x);
+    /**
+     * Set text with alignment for this label and set a background image with given path
+     * @param text text of label
+     * @param path  path for background image
+     * @param alignment alignment for text of label
+     */
+    public MyLabel(String text, String path, int alignment) {
+        super(text, alignment);
         image = new ImageIcon(getClass().getResource(path)).getImage();
     }
 

@@ -9,6 +9,10 @@ import java.awt.*;
 public class MyPanel extends Container{
     private Image image = null ;
 
+    /**
+     * Set background image with given path
+     * @param path  path for background
+     */
     public MyPanel( String path ){
         this.image = new ImageIcon(getClass().getResource(path)).getImage();
        // this.setVisible(true);

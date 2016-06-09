@@ -22,6 +22,9 @@ public abstract  class UserPanel extends JFrame{
     protected MyPanel drawer ;
     protected MyPanel main ;
 
+    /**
+     * This objects includes information about user and communicates with database
+     */
     protected User core ;
     /**
      * Magnitude of imaginary layouts
