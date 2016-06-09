@@ -1,8 +1,6 @@
 package healthNetwork;
 
-import healthNetwork.view.StartPage;
-import healthNetwork.view.panels.DoctorPanel;
-import healthNetwork.view.panels.UserPanel;
+import healthNetwork.view.panels.userPanel.DoctorPanel;
 
 /**
  * Created by mma on 6/8/2016.

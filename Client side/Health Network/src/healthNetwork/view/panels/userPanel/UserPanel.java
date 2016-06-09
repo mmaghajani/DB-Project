@@ -1,14 +1,12 @@
-package healthNetwork.view.panels;
+package healthNetwork.view.panels.userPanel;
 
 import healthNetwork.Constants;
-import healthNetwork.core.User;
+import healthNetwork.core.user.User;
 import healthNetwork.handler.GraphicHandler;
 import healthNetwork.view.customView.MyButton;
-import healthNetwork.view.customView.MyLabel;
 import healthNetwork.view.customView.MyPanel;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
