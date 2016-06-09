@@ -1,6 +1,5 @@
 package healthNetwork.view.customView;
 
-import com.sun.deploy.panel.JSmartTextArea;
 import healthNetwork.Constants;
 
 import javax.swing.*;

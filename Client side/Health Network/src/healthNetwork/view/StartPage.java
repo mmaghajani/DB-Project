@@ -35,7 +35,7 @@ public class StartPage extends JFrame {
     private final int widthOfTitleBar = width ;
     private final int titleBarX = 0 ;
     private final int titleBarY = height / 15 ;
-    private final int titleFontSize = 50 ;
+    private final int titleFontSize = 35 ;
     private final int mainPanelX = 0 ;
     private final int mainPanelY = heightOfTitleBar ;
     private final int heightOfMainPanel = height * 5 / 7 ;
@@ -112,7 +112,7 @@ public class StartPage extends JFrame {
         title.setLocation(titleBarX, titleBarY);
         title.setSize(widthOfTitleBar, heightOfTitleBar);
         title.setForeground(Color.WHITE);
-        title.setFont(new Font(Constants.fantasticFont, Font.BOLD, titleFontSize));
+        title.setFont(new Font(Constants.arilFont, Font.CENTER_BASELINE, titleFontSize));
     }
 
     private void setToolBar() {
