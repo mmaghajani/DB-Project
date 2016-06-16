@@ -22,6 +22,11 @@ public class MyButton extends JButton {
     private Image image = null;
     private final int fontSize = 15 ;
 
+    /**
+     * Set text and a background for button
+     * @param text text for button
+     * @param path background path
+     */
     public MyButton(String text, String path) {
         // TODO Auto-generated constructor stub
         super(text);
@@ -29,6 +34,10 @@ public class MyButton extends JButton {
 
     }
 
+    /**
+     * Set only background for this button
+     * @param path
+     */
     public MyButton(String path) {
         // TODO Auto-generated constructor stub
         super();

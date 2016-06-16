@@ -1,6 +1,5 @@
 package healthNetwork.view.customView;
 
-import com.sun.deploy.panel.JSmartTextArea;
 import healthNetwork.Constants;
 
 import javax.swing.*;
@@ -24,6 +23,11 @@ public class MyPasswordField extends JPasswordField{
         super() ;
     }
 
+    /**
+     * Set auto text for this field and set background image with given path
+     * @param name auto text for the field
+     * @param path path for background image
+     */
     public MyPasswordField( String name , String path){
         super() ;
         text = name ;

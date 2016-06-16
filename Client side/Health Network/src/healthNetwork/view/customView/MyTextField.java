@@ -1,6 +1,5 @@
 package healthNetwork.view.customView;
 
-import com.sun.deploy.panel.JSmartTextArea;
 import healthNetwork.Constants;
 
 import javax.swing.*;
@@ -23,6 +22,11 @@ public class MyTextField extends JTextField{
         super() ;
     }
 
+    /**
+     * Set auto text for this field and set background image with given path
+     * @param name auto text for the field
+     * @param path path for background image
+     */
     public MyTextField( String name , String path){
         super() ;
         text = name ;

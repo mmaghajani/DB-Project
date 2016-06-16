@@ -21,11 +21,11 @@ public class StartPage extends JFrame {
 
     private int width = GraphicHandler.getInstance().getWidthScreen() / 4 ;
     private int height = GraphicHandler.getInstance().getHeightScreen() / 3 ;
-    private MyLabel title ;
-    private MyTextField id ;
+    private MyLabel titleLbl;
+    private MyTextField idField;
     private JPasswordField passwordField ;
-    private JButton signIn ;
-    private JButton signUp ;
+    private JButton signInBtn;
+    private JButton signUpBtn;
     private JToolBar toolBar ;
 
     /**
@@ -35,7 +35,7 @@ public class StartPage extends JFrame {
     private final int widthOfTitleBar = width ;
     private final int titleBarX = 0 ;
     private final int titleBarY = height / 15 ;
-    private final int titleFontSize = 50 ;
+    private final int titleFontSize = 35 ;
     private final int mainPanelX = 0 ;
     private final int mainPanelY = heightOfTitleBar ;
     private final int heightOfMainPanel = height * 5 / 7 ;
@@ -62,21 +62,21 @@ public class StartPage extends JFrame {
     }
 
     private void setMainPanel() {
-        id = new MyTextField("ID" , Constants.buttonJPGPath) ;
-        id.setSize(width * 2 / 3 , height / 8 );
-        id.setLocation(widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel/4 );
+        idField = new MyTextField("ID" , Constants.buttonJPGPath) ;
+        idField.setSize(width * 2 / 3 , height / 8 );
+        idField.setLocation(widthOfMainPanel/2 - idField.getWidth()/2 , mainPanelY + heightOfMainPanel/4 );
 
         passwordField = new MyPasswordField("Password" , Constants.buttonJPGPath) ;
         passwordField.setSize(width * 2 / 3 , height / 8 );
-        passwordField.setLocation(widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel/2 );
+        passwordField.setLocation(widthOfMainPanel/2 - idField.getWidth()/2 , mainPanelY + heightOfMainPanel/2 );
 
-        signIn = new MyButton("sign in" , Constants.buttonJPGPath) ;
-        signIn.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
-        signIn.setLocation( widthOfMainPanel/2 - id.getWidth()/2 , mainPanelY + heightOfMainPanel * 5/6 );
+        signInBtn = new MyButton("sign in" , Constants.buttonJPGPath) ;
+        signInBtn.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
+        signInBtn.setLocation( widthOfMainPanel/2 - idField.getWidth()/2 , mainPanelY + heightOfMainPanel * 5/6 );
 
-        signUp = new MyButton("sign up" , Constants.buttonJPGPath) ;
-        signUp.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
-        signUp.setLocation( widthOfMainPanel/2  , mainPanelY + heightOfMainPanel * 5/6 );
+        signUpBtn = new MyButton("sign up" , Constants.buttonJPGPath) ;
+        signUpBtn.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
+        signUpBtn.setLocation( widthOfMainPanel/2  , mainPanelY + heightOfMainPanel * 5/6 );
     }
 
     private void initialize(){
@@ -108,11 +108,11 @@ public class StartPage extends JFrame {
     }
 
     private void setTitle() {
-        title = new MyLabel(Constants.appName, Constants.labelJPGPath , JLabel.CENTER);
-        title.setLocation(titleBarX, titleBarY);
-        title.setSize(widthOfTitleBar, heightOfTitleBar);
-        title.setForeground(Color.WHITE);
-        title.setFont(new Font(Constants.fantasticFont, Font.BOLD, titleFontSize));
+        titleLbl = new MyLabel(Constants.appName, Constants.labelJPGPath , JLabel.CENTER);
+        titleLbl.setLocation(titleBarX, titleBarY);
+        titleLbl.setSize(widthOfTitleBar, heightOfTitleBar);
+        titleLbl.setForeground(Color.WHITE);
+        titleLbl.setFont(new Font(Constants.arilFont, Font.CENTER_BASELINE, titleFontSize));
     }
 
     private void setToolBar() {
@@ -141,12 +141,12 @@ public class StartPage extends JFrame {
     }
 
     private void AddComponentsToFrame() {
-        getContentPane().add(title);
+        getContentPane().add(titleLbl);
         getContentPane().add(toolBar);
-        getContentPane().add(id) ;
+        getContentPane().add(idField) ;
         getContentPane().add(passwordField) ;
-        getContentPane().add(signIn) ;
-        getContentPane().add(signUp) ;
+        getContentPane().add(signInBtn) ;
+        getContentPane().add(signUpBtn) ;
     }
 
     /**
@@ -160,9 +160,15 @@ public class StartPage extends JFrame {
         Image image = new ImageIcon(getClass().getResource(Constants.blueBackJPGPath)).getImage();
         g.drawImage(image, 0, 0, width, height, null);
 
-        title.repaint();
+        componentRepaint() ;
+    }
+
+    private void componentRepaint() {
+        titleLbl.repaint();
         toolBar.getComponent(0).repaint();
-        signIn.repaint();
-        signUp.repaint();
+        signInBtn.repaint();
+        signUpBtn.repaint();
+        idField.repaint();
+        passwordField.repaint();
     }
 }

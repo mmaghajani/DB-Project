@@ -1,8 +1,7 @@
-package healthNetwork.view.panels;
+package healthNetwork.view.panels.userPanel;
 
 import healthNetwork.Constants;
-import healthNetwork.core.Doctor;
-import healthNetwork.core.Scholar;
+import healthNetwork.core.user.Scholar;
 import healthNetwork.view.customView.MyLabel;
 
 import javax.swing.*;

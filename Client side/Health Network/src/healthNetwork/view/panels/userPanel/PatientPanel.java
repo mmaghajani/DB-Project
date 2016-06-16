@@ -1,8 +1,7 @@
-package healthNetwork.view.panels;
+package healthNetwork.view.panels.userPanel;
 
 import healthNetwork.Constants;
-import healthNetwork.core.Patient;
-import healthNetwork.core.PharmacyDoctor;
+import healthNetwork.core.user.Patient;
 import healthNetwork.view.customView.MyLabel;
 
 import javax.swing.*;
@@ -12,13 +11,12 @@ import java.awt.*;
 /**
  * Created by mma on 6/9/2016.
  */
-public class PharmacyDoctorPanel extends UserPanel {
+public class PatientPanel extends UserPanel{
 
-
-    public PharmacyDoctorPanel(){
+    public PatientPanel(){
         super();
 
-        core = new PharmacyDoctor() ;
+        core = new Patient() ;
     }
 
     /**
@@ -32,7 +30,7 @@ public class PharmacyDoctorPanel extends UserPanel {
      * Set title and content for drawer based on core object
      */
     protected void setDrawer() {
-        MyLabel title = new MyLabel("List of patient" , MyLabel.CENTER) ;
+        MyLabel title = new MyLabel("List of doctors" , MyLabel.CENTER) ;
         title.setFont(new Font(Constants.segoeFont, Font.BOLD, titleFontSize));
         title.setLocation(0, 0);
         title.setSize(widthOfListOfPatient , heightOfListOfPatient / 10);
@@ -44,7 +42,7 @@ public class PharmacyDoctorPanel extends UserPanel {
      * Set title and content for title bar based on core object
      */
     protected void setTitle(){
-        MyLabel name = new MyLabel("Hello PDr." , Constants.darkBlueJPGPath , JLabel.LEFT);
+        MyLabel name = new MyLabel("Hello Mr." , Constants.darkBlueJPGPath , JLabel.LEFT);
         name.setLocation(titleBarX, titleBarY);
         name.setSize(widthOfTitleBar / 2 , heightOfTitleBar);
         name.setForeground(Color.WHITE);
@@ -52,4 +50,5 @@ public class PharmacyDoctorPanel extends UserPanel {
         name.setFont(new Font(Constants.segoeFont, Font.BOLD, titleFontSize));
         titleBar.add(name) ;
     }
+
 }

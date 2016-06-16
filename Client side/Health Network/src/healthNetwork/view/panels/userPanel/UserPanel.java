@@ -1,14 +1,12 @@
-package healthNetwork.view.panels;
+package healthNetwork.view.panels.userPanel;
 
 import healthNetwork.Constants;
-import healthNetwork.core.User;
+import healthNetwork.core.user.User;
 import healthNetwork.handler.GraphicHandler;
 import healthNetwork.view.customView.MyButton;
-import healthNetwork.view.customView.MyLabel;
 import healthNetwork.view.customView.MyPanel;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
@@ -22,6 +20,9 @@ public abstract  class UserPanel extends JFrame{
     protected MyPanel drawer ;
     protected MyPanel main ;
 
+    /**
+     * This objects includes information about user and communicates with database
+     */
     protected User core ;
     /**
      * Magnitude of imaginary layouts
