@@ -1,6 +1,6 @@
 package healthNetwork;
 
-import healthNetwork.view.panels.userPanel.DoctorPanel;
+import healthNetwork.ui.panels.userPanel.DoctorPanel;
 
 /**
  * Created by mma on 6/8/2016.
